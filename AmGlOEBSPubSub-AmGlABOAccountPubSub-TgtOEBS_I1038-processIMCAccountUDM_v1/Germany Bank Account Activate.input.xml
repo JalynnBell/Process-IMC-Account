@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<IDataXMLCoder version="1.0">
+  <record javaclass="com.wm.data.ISMemDataImpl">
+    <record name="AmGlDocs.Order:IMCAccountUDM" javaclass="com.wm.data.ISMemDataImpl">
+      <value name="Affiliate">060</value>
+      <value name="IMCNumber">00000006550</value>
+      <value name="IMCAccountSequenceNumber">0000003</value>
+      <value name="TransactionType">007</value>
+      <value name="Currency">EUR</value>
+      <value name="AccountNumber">0020835567          </value>
+      <value name="AccountStatus">V</value>
+      <value name="Bank">75050000            </value>
+      <value name="BankBranch">                    </value>
+      <value name="BankCountry">060</value>
+      <value name="AccountName">AMWAY 0006550, ABO 0006550                        </value>
+      <value name="EntryDate">1180529</value>
+      <value name="AccountExpirationDate">0000000</value>
+      <value name="CheckCreditFlag">S</value>
+      <value name="RoutingNumber">00000000000</value>
+      <value name="AccountPIN">       </value>
+      <value name="CreditType">   </value>
+      <value name="BankName">SPARKASSE                                         </value>
+      <value name="IntlBankAcctNumber">DE45750500000020835567            </value>
+      <value name="SWIFTCode">BYLADEM1RBG</value>
+      <value name="AccountHolderName">00000006550</value>
+      <record name="TargetApplications" javaclass="com.wm.data.ISMemDataImpl">
+        <value name="Affiliate">060</value>
+        <value name="Country">060</value>
+        <value name="SourceTransactionCode">U</value>
+        <value name="webmTransactionDate">2018-05-29 15:32:46.079</value>
+        <value name="PublishingApplication">OMS</value>
+        <value name="BufferSequenceNumber">000000050532693</value>
+        <value name="SourceFile">ODSTACC</value>
+        <value name="DocumentID">6550®®3®®</value>
+        <value name="AS400DateTimeStamp">2018-05-29 21:32:42.918</value>
+        <value name="ONYX">N</value>
+        <value name="RMDM">N</value>
+        <value name="LADW">N</value>
+        <value name="GDW">N</value>
+        <value name="ECOMM">Y</value>
+        <value name="EBS">N</value>
+        <value name="POS">N</value>
+        <value name="OMS">N</value>
+        <value name="IMS">Y</value>
+        <value name="ACCUCAST">N</value>
+        <value name="PQTS">Y</value>
+      </record>
+      <value name="canonicalKey">U</value>
+      <value name="SourceTransactionCode">U</value>
+      <value name="webmTransactionDate">2018-05-29 15:32:46.079</value>
+      <value name="PublishingApplication">OMS</value>
+      <record name="_env" javaclass="com.wm.data.ISMemDataImpl">
+        <value name="activation">wm6dc646250-6800-1389-a78a-ffffed2bea4f</value>
+        <value name="businessContext">wm6:67b42f80-46d5-1447-a503-ffffed2bea50\snull\snull:wm6dc646250-6800-1389-a78a-ffffed2bea4f:null:IS_61:null</value>
+        <value name="locale"></value>
+        <value name="pubId">IS_GBL_QA_DefaultClient</value>
+        <value name="uuid">105341f0-6377-11e8-8498-00000067cf2d</value>
+        <number name="eventID" type="java.lang.Long">80</number>
+        <Date name="recvTime" type="java.util.Date">Tue May 29 15:32:46 EDT 2018</Date>
+      </record>
+    </record>
+  </record>
+</IDataXMLCoder>

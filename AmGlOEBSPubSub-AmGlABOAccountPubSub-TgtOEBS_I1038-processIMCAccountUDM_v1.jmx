@@ -1,0 +1,1077 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="2.9" jmeter="3.1-SNAPSHOT.20160907">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Test Plan" enabled="true">
+      <stringProp name="TestPlan.comments"></stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments">
+          <elementProp name="invokeAlias" elementType="Argument">
+            <stringProp name="Argument.name">invokeAlias</stringProp>
+            <stringProp name="Argument.value">/cate_runner</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="jmxScriptDirectory" elementType="Argument">
+            <stringProp name="Argument.name">jmxScriptDirectory</stringProp>
+            <stringProp name="Argument.value">${__P(jmxScriptDirectory,.)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+        </collectionProp>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Invoke Group" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <longProp name="ThreadGroup.start_time">1428501082000</longProp>
+        <longProp name="ThreadGroup.end_time">1428501082000</longProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <WmServiceInvokeSampler guiclass="WmServiceInvokeSamplerGui" testclass="WmServiceInvokeSampler" testname="AmGlOEBSPubSub.AmGlABOAccountPubSub.TgtOEBS_I1038:processIMCAccountUDM_v1(00000001)" enabled="true">
+          <stringProp name="TestPlan.comments">WebMethods Service Invocation</stringProp>
+          <stringProp name="HTTPSampler.proxyHost">${__P(hostname,localhost)}</stringProp>
+          <stringProp name="HTTPSampler.domain">${__P(hostname,localhost)}</stringProp>
+          <stringProp name="HTTPSampler.proxyPort">${__P(port,5555)}</stringProp>
+          <stringProp name="HTTPSampler.port">${__P(port,5555)}</stringProp>
+          <stringProp name="HTTPSampler.proxyUser">${__P(username,Administrator)}</stringProp>
+          <stringProp name="HTTPSampler.proxyPass">${__P(password,manage)}</stringProp>
+		  <stringProp name="WmSampler.serviceInputType">IData XML Content</stringProp>
+		  <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+		  <boolProp name="HTTPSampler.monitor">false</boolProp>          
+          <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+			  <elementProp name="fileContent" elementType="HTTPArgument">
+                 <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                 <stringProp name="Argument.name">fileContent</stringProp>
+                 <stringProp name="Argument.value">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+
+&lt;IDataXMLCoder version=&quot;1.0&quot;&gt;
+  &lt;record javaclass=&quot;com.wm.data.ISMemDataImpl&quot;&gt;
+    &lt;record name=&quot;AmGlDocs.Order:IMCAccountUDM&quot; javaclass=&quot;com.wm.data.ISMemDataImpl&quot;&gt;
+      &lt;value name=&quot;Affiliate&quot;&gt;060&lt;/value&gt;
+      &lt;value name=&quot;IMCNumber&quot;&gt;00000006550&lt;/value&gt;
+      &lt;value name=&quot;IMCAccountSequenceNumber&quot;&gt;0000003&lt;/value&gt;
+      &lt;value name=&quot;TransactionType&quot;&gt;007&lt;/value&gt;
+      &lt;value name=&quot;Currency&quot;&gt;EUR&lt;/value&gt;
+      &lt;value name=&quot;AccountNumber&quot;&gt;0020835567          &lt;/value&gt;
+      &lt;value name=&quot;AccountStatus&quot;&gt;V&lt;/value&gt;
+      &lt;value name=&quot;Bank&quot;&gt;75050000            &lt;/value&gt;
+      &lt;value name=&quot;BankBranch&quot;&gt;                    &lt;/value&gt;
+      &lt;value name=&quot;BankCountry&quot;&gt;060&lt;/value&gt;
+      &lt;value name=&quot;AccountName&quot;&gt;AMWAY 0006550, ABO 0006550                        &lt;/value&gt;
+      &lt;value name=&quot;EntryDate&quot;&gt;1180529&lt;/value&gt;
+      &lt;value name=&quot;AccountExpirationDate&quot;&gt;0000000&lt;/value&gt;
+      &lt;value name=&quot;CheckCreditFlag&quot;&gt;S&lt;/value&gt;
+      &lt;value name=&quot;RoutingNumber&quot;&gt;00000000000&lt;/value&gt;
+      &lt;value name=&quot;AccountPIN&quot;&gt;       &lt;/value&gt;
+      &lt;value name=&quot;CreditType&quot;&gt;   &lt;/value&gt;
+      &lt;value name=&quot;BankName&quot;&gt;SPARKASSE                                         &lt;/value&gt;
+      &lt;value name=&quot;IntlBankAcctNumber&quot;&gt;DE45750500000020835567            &lt;/value&gt;
+      &lt;value name=&quot;SWIFTCode&quot;&gt;BYLADEM1RBG&lt;/value&gt;
+      &lt;value name=&quot;AccountHolderName&quot;&gt;00000006550&lt;/value&gt;
+      &lt;record name=&quot;TargetApplications&quot; javaclass=&quot;com.wm.data.ISMemDataImpl&quot;&gt;
+        &lt;value name=&quot;Affiliate&quot;&gt;060&lt;/value&gt;
+        &lt;value name=&quot;Country&quot;&gt;060&lt;/value&gt;
+        &lt;value name=&quot;SourceTransactionCode&quot;&gt;U&lt;/value&gt;
+        &lt;value name=&quot;webmTransactionDate&quot;&gt;2018-05-29 15:32:46.079&lt;/value&gt;
+        &lt;value name=&quot;PublishingApplication&quot;&gt;OMS&lt;/value&gt;
+        &lt;value name=&quot;BufferSequenceNumber&quot;&gt;000000050532693&lt;/value&gt;
+        &lt;value name=&quot;SourceFile&quot;&gt;ODSTACC&lt;/value&gt;
+        &lt;value name=&quot;DocumentID&quot;&gt;6550®®3®®&lt;/value&gt;
+        &lt;value name=&quot;AS400DateTimeStamp&quot;&gt;2018-05-29 21:32:42.918&lt;/value&gt;
+        &lt;value name=&quot;ONYX&quot;&gt;N&lt;/value&gt;
+        &lt;value name=&quot;RMDM&quot;&gt;N&lt;/value&gt;
+        &lt;value name=&quot;LADW&quot;&gt;N&lt;/value&gt;
+        &lt;value name=&quot;GDW&quot;&gt;N&lt;/value&gt;
+        &lt;value name=&quot;ECOMM&quot;&gt;Y&lt;/value&gt;
+        &lt;value name=&quot;EBS&quot;&gt;N&lt;/value&gt;
+        &lt;value name=&quot;POS&quot;&gt;N&lt;/value&gt;
+        &lt;value name=&quot;OMS&quot;&gt;N&lt;/value&gt;
+        &lt;value name=&quot;IMS&quot;&gt;Y&lt;/value&gt;
+        &lt;value name=&quot;ACCUCAST&quot;&gt;N&lt;/value&gt;
+        &lt;value name=&quot;PQTS&quot;&gt;Y&lt;/value&gt;
+      &lt;/record&gt;
+      &lt;value name=&quot;canonicalKey&quot;&gt;U&lt;/value&gt;
+      &lt;value name=&quot;SourceTransactionCode&quot;&gt;U&lt;/value&gt;
+      &lt;value name=&quot;webmTransactionDate&quot;&gt;2018-05-29 15:32:46.079&lt;/value&gt;
+      &lt;value name=&quot;PublishingApplication&quot;&gt;OMS&lt;/value&gt;
+      &lt;record name=&quot;_env&quot; javaclass=&quot;com.wm.data.ISMemDataImpl&quot;&gt;
+        &lt;value name=&quot;activation&quot;&gt;wm6dc646250-6800-1389-a78a-ffffed2bea4f&lt;/value&gt;
+        &lt;value name=&quot;businessContext&quot;&gt;wm6:67b42f80-46d5-1447-a503-ffffed2bea50\snull\snull:wm6dc646250-6800-1389-a78a-ffffed2bea4f:null:IS_61:null&lt;/value&gt;
+        &lt;value name=&quot;locale&quot;&gt;&lt;/value&gt;
+        &lt;value name=&quot;pubId&quot;&gt;IS_GBL_QA_DefaultClient&lt;/value&gt;
+        &lt;value name=&quot;uuid&quot;&gt;105341f0-6377-11e8-8498-00000067cf2d&lt;/value&gt;
+        &lt;number name=&quot;eventID&quot; type=&quot;java.lang.Long&quot;&gt;80&lt;/number&gt;
+        &lt;Date name=&quot;recvTime&quot; type=&quot;java.util.Date&quot;&gt;Tue May 29 15:32:46 EDT 2018&lt;/Date&gt;
+      &lt;/record&gt;
+    &lt;/record&gt;
+  &lt;/record&gt;
+&lt;/IDataXMLCoder&gt;
+</stringProp>
+                 <stringProp name="Argument.metadata">=</stringProp>
+                 <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+              <elementProp name="serviceName" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">AmGlOEBSPubSub.AmGlABOAccountPubSub.TgtOEBS_I1038:processIMCAccountUDM_v1</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">serviceName</stringProp>
+              </elementProp>
+<!-- :mockedServices: -->	
+			  <elementProp name="monitoredServices" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.name">monitoredServices</stringProp>
+                <stringProp name="Argument.value"><!-- :monitoredServicesList: --></stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+        </WmServiceInvokeSampler>
+        <hashTree>
+		   <XPathExtractor guiclass="XPathExtractorGui" testclass="XPathExtractor" testname="XPath Extractor" enabled="true">
+            <stringProp name="XPathExtractor.default"></stringProp>
+            <stringProp name="XPathExtractor.refname">innerInvokes</stringProp>
+            <stringProp name="XPathExtractor.xpathQuery">/document/innerInvokes</stringProp>
+            <boolProp name="XPathExtractor.validate">false</boolProp>
+            <boolProp name="XPathExtractor.tolerant">false</boolProp>
+            <boolProp name="XPathExtractor.namespace">false</boolProp>
+          </XPathExtractor>
+		  <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Check the IS response" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="49586">200</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">8</intProp>
+            <stringProp name="TestPlan.comments">Check if the Integration Server response code = 200</stringProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <XPathAssertion guiclass="XPathAssertionGui" testclass="XPathAssertion" testname="Check errorMessage" enabled="true">
+            <boolProp name="XPath.negate">false</boolProp>
+            <stringProp name="XPath.xpath">/document/errorMessage[text()=&quot;OK&quot;]</stringProp>
+            <boolProp name="XPath.validate">false</boolProp>
+            <boolProp name="XPath.whitespace">true</boolProp>
+            <boolProp name="XPath.tolerant">false</boolProp>
+            <boolProp name="XPath.namespace">false</boolProp>
+            <stringProp name="TestPlan.comments">Check errorMessage</stringProp>
+          </XPathAssertion>
+          <hashTree/>
+          <XPathAssertion guiclass="XPathAssertionGui" testclass="XPathAssertion" testname="outputResult" enabled="true">
+            <boolProp name="XPath.negate">false</boolProp>
+            <stringProp name="XPath.xpath">/document/outputResult</stringProp>
+            <boolProp name="XPath.validate">false</boolProp>
+            <boolProp name="XPath.whitespace">false</boolProp>
+            <boolProp name="XPath.tolerant">false</boolProp>
+            <boolProp name="XPath.namespace">false</boolProp>
+          </XPathAssertion>
+          <hashTree/>
+          <XPathAssertion guiclass="XPathAssertionGui" testclass="XPathAssertion" testname="InsertBankAccountResponse_v1" enabled="true">
+            <boolProp name="XPath.negate">true</boolProp>
+            <stringProp name="XPath.xpath">/document/outputResult/InsertBankAccountResponse_v1</stringProp>
+            <boolProp name="XPath.validate">false</boolProp>
+            <boolProp name="XPath.whitespace">false</boolProp>
+            <boolProp name="XPath.tolerant">false</boolProp>
+            <boolProp name="XPath.namespace">false</boolProp>
+          </XPathAssertion>
+          <hashTree/>
+          <XPathAssertion guiclass="XPathAssertionGui" testclass="XPathAssertion" testname="ReturnCode[text()=&quot;0&quot;]" enabled="true">
+            <boolProp name="XPath.negate">false</boolProp>
+            <stringProp name="XPath.xpath">/document/outputResult/InsertBankAccountResponse_v1/ReturnCode[text()=&quot;0&quot;]</stringProp>
+            <boolProp name="XPath.validate">false</boolProp>
+            <boolProp name="XPath.whitespace">false</boolProp>
+            <boolProp name="XPath.tolerant">false</boolProp>
+            <boolProp name="XPath.namespace">false</boolProp>
+          </XPathAssertion>
+          <hashTree/>
+          <XPathAssertion guiclass="XPathAssertionGui" testclass="XPathAssertion" testname="ReturnMessage[text()=&quot;SUCCESS&quot;]" enabled="true">
+            <boolProp name="XPath.negate">false</boolProp>
+            <stringProp name="XPath.xpath">/document/outputResult/InsertBankAccountResponse_v1/ReturnMessage[text()=&quot;SUCCESS&quot;]</stringProp>
+            <boolProp name="XPath.validate">false</boolProp>
+            <boolProp name="XPath.whitespace">false</boolProp>
+            <boolProp name="XPath.tolerant">false</boolProp>
+            <boolProp name="XPath.namespace">false</boolProp>
+          </XPathAssertion>
+          <hashTree/>
+          <XPathAssertion guiclass="XPathAssertionGui" testclass="XPathAssertion" testname="IMCAccountUDM" enabled="true">
+            <boolProp name="XPath.negate">true</boolProp>
+            <stringProp name="XPath.xpath">/document/outputResult/IMCAccountUDM</stringProp>
+            <boolProp name="XPath.validate">false</boolProp>
+            <boolProp name="XPath.whitespace">false</boolProp>
+            <boolProp name="XPath.tolerant">false</boolProp>
+            <boolProp name="XPath.namespace">false</boolProp>
+          </XPathAssertion>
+          <hashTree/>
+          <XPathAssertion guiclass="XPathAssertionGui" testclass="XPathAssertion" testname="Affiliate[1][text()=&quot;060&quot;]" enabled="true">
+            <boolProp name="XPath.negate">false</boolProp>
+            <stringProp name="XPath.xpath">/document/outputResult/IMCAccountUDM/Affiliate[1][text()=&quot;060&quot;]</stringProp>
+            <boolProp name="XPath.validate">false</boolProp>
+            <boolProp name="XPath.whitespace">false</boolProp>
+            <boolProp name="XPath.tolerant">false</boolProp>
+            <boolProp name="XPath.namespace">false</boolProp>
+          </XPathAssertion>
+          <hashTree/>
+          <XPathAssertion guiclass="XPathAssertionGui" testclass="XPathAssertion" testname="IMCNumber[text()=&quot;00000006550&quot;]" enabled="true">
+            <boolProp name="XPath.negate">false</boolProp>
+            <stringProp name="XPath.xpath">/document/outputResult/IMCAccountUDM/IMCNumber[text()=&quot;00000006550&quot;]</stringProp>
+            <boolProp name="XPath.validate">false</boolProp>
+            <boolProp name="XPath.whitespace">false</boolProp>
+            <boolProp name="XPath.tolerant">false</boolProp>
+            <boolProp name="XPath.namespace">false</boolProp>
+          </XPathAssertion>
+          <hashTree/>
+          <XPathAssertion guiclass="XPathAssertionGui" testclass="XPathAssertion" testname="IMCAccountSequenceNumber[text()=&quot;0000003&quot;]" enabled="true">
+            <boolProp name="XPath.negate">false</boolProp>
+            <stringProp name="XPath.xpath">/document/outputResult/IMCAccountUDM/IMCAccountSequenceNumber[text()=&quot;0000003&quot;]</stringProp>
+            <boolProp name="XPath.validate">false</boolProp>
+            <boolProp name="XPath.whitespace">false</boolProp>
+            <boolProp name="XPath.tolerant">false</boolProp>
+            <boolProp name="XPath.namespace">false</boolProp>
+          </XPathAssertion>
+          <hashTree/>
+          <XPathAssertion guiclass="XPathAssertionGui" testclass="XPathAssertion" testname="TransactionType[text()=&quot;007&quot;]" enabled="true">
+            <boolProp name="XPath.negate">false</boolProp>
+            <stringProp name="XPath.xpath">/document/outputResult/IMCAccountUDM/TransactionType[text()=&quot;007&quot;]</stringProp>
+            <boolProp name="XPath.validate">false</boolProp>
+            <boolProp name="XPath.whitespace">false</boolProp>
+            <boolProp name="XPath.tolerant">false</boolProp>
+            <boolProp name="XPath.namespace">false</boolProp>
+          </XPathAssertion>
+          <hashTree/>
+          <XPathAssertion guiclass="XPathAssertionGui" testclass="XPathAssertion" testname="Currency[text()=&quot;EUR&quot;]" enabled="true">
+            <boolProp name="XPath.negate">false</boolProp>
+            <stringProp name="XPath.xpath">/document/outputResult/IMCAccountUDM/Currency[text()=&quot;EUR&quot;]</stringProp>
+            <boolProp name="XPath.validate">false</boolProp>
+            <boolProp name="XPath.whitespace">false</boolProp>
+            <boolProp name="XPath.tolerant">false</boolProp>
+            <boolProp name="XPath.namespace">false</boolProp>
+          </XPathAssertion>
+          <hashTree/>
+          <XPathAssertion guiclass="XPathAssertionGui" testclass="XPathAssertion" testname="AccountNumber[text()=&quot;0020835567          &quot;]" enabled="true">
+            <boolProp name="XPath.negate">false</boolProp>
+            <stringProp name="XPath.xpath">/document/outputResult/IMCAccountUDM/AccountNumber[text()=&quot;0020835567          &quot;]</stringProp>
+            <boolProp name="XPath.validate">false</boolProp>
+            <boolProp name="XPath.whitespace">false</boolProp>
+            <boolProp name="XPath.tolerant">false</boolProp>
+            <boolProp name="XPath.namespace">false</boolProp>
+          </XPathAssertion>
+          <hashTree/>
+          <XPathAssertion guiclass="XPathAssertionGui" testclass="XPathAssertion" testname="AccountStatus[text()=&quot;V&quot;]" enabled="true">
+            <boolProp name="XPath.negate">false</boolProp>
+            <stringProp name="XPath.xpath">/document/outputResult/IMCAccountUDM/AccountStatus[text()=&quot;V&quot;]</stringProp>
+            <boolProp name="XPath.validate">false</boolProp>
+            <boolProp name="XPath.whitespace">false</boolProp>
+            <boolProp name="XPath.tolerant">false</boolProp>
+            <boolProp name="XPath.namespace">false</boolProp>
+          </XPathAssertion>
+          <hashTree/>
+          <XPathAssertion guiclass="XPathAssertionGui" testclass="XPathAssertion" testname="Bank[text()=&quot;75050000            &quot;]" enabled="true">
+            <boolProp name="XPath.negate">false</boolProp>
+            <stringProp name="XPath.xpath">/document/outputResult/IMCAccountUDM/Bank[text()=&quot;75050000            &quot;]</stringProp>
+            <boolProp name="XPath.validate">false</boolProp>
+            <boolProp name="XPath.whitespace">false</boolProp>
+            <boolProp name="XPath.tolerant">false</boolProp>
+            <boolProp name="XPath.namespace">false</boolProp>
+          </XPathAssertion>
+          <hashTree/>
+          <XPathAssertion guiclass="XPathAssertionGui" testclass="XPathAssertion" testname="BankBranch" enabled="true">
+            <boolProp name="XPath.negate">true</boolProp>
+            <stringProp name="XPath.xpath">/document/outputResult/IMCAccountUDM/BankBranch</stringProp>
+            <boolProp name="XPath.validate">false</boolProp>
+            <boolProp name="XPath.whitespace">false</boolProp>
+            <boolProp name="XPath.tolerant">false</boolProp>
+            <boolProp name="XPath.namespace">false</boolProp>
+          </XPathAssertion>
+          <hashTree/>
+          <XPathAssertion guiclass="XPathAssertionGui" testclass="XPathAssertion" testname="BankCountry[text()=&quot;060&quot;]" enabled="true">
+            <boolProp name="XPath.negate">false</boolProp>
+            <stringProp name="XPath.xpath">/document/outputResult/IMCAccountUDM/BankCountry[text()=&quot;060&quot;]</stringProp>
+            <boolProp name="XPath.validate">false</boolProp>
+            <boolProp name="XPath.whitespace">false</boolProp>
+            <boolProp name="XPath.tolerant">false</boolProp>
+            <boolProp name="XPath.namespace">false</boolProp>
+          </XPathAssertion>
+          <hashTree/>
+          <XPathAssertion guiclass="XPathAssertionGui" testclass="XPathAssertion" testname="AccountName[text()=&quot;AMWAY 0006550, ABO 0006550                        &quot;]" enabled="true">
+            <boolProp name="XPath.negate">false</boolProp>
+            <stringProp name="XPath.xpath">/document/outputResult/IMCAccountUDM/AccountName[text()=&quot;AMWAY 0006550, ABO 0006550                        &quot;]</stringProp>
+            <boolProp name="XPath.validate">false</boolProp>
+            <boolProp name="XPath.whitespace">false</boolProp>
+            <boolProp name="XPath.tolerant">false</boolProp>
+            <boolProp name="XPath.namespace">false</boolProp>
+          </XPathAssertion>
+          <hashTree/>
+          <XPathAssertion guiclass="XPathAssertionGui" testclass="XPathAssertion" testname="AccountExpirationDate[text()=&quot;0000000&quot;]" enabled="true">
+            <boolProp name="XPath.negate">false</boolProp>
+            <stringProp name="XPath.xpath">/document/outputResult/IMCAccountUDM/AccountExpirationDate[text()=&quot;0000000&quot;]</stringProp>
+            <boolProp name="XPath.validate">false</boolProp>
+            <boolProp name="XPath.whitespace">false</boolProp>
+            <boolProp name="XPath.tolerant">false</boolProp>
+            <boolProp name="XPath.namespace">false</boolProp>
+          </XPathAssertion>
+          <hashTree/>
+          <XPathAssertion guiclass="XPathAssertionGui" testclass="XPathAssertion" testname="CheckCreditFlag[text()=&quot;S&quot;]" enabled="true">
+            <boolProp name="XPath.negate">false</boolProp>
+            <stringProp name="XPath.xpath">/document/outputResult/IMCAccountUDM/CheckCreditFlag[text()=&quot;S&quot;]</stringProp>
+            <boolProp name="XPath.validate">false</boolProp>
+            <boolProp name="XPath.whitespace">false</boolProp>
+            <boolProp name="XPath.tolerant">false</boolProp>
+            <boolProp name="XPath.namespace">false</boolProp>
+          </XPathAssertion>
+          <hashTree/>
+          <XPathAssertion guiclass="XPathAssertionGui" testclass="XPathAssertion" testname="RoutingNumber[text()=&quot;00000000000&quot;]" enabled="true">
+            <boolProp name="XPath.negate">false</boolProp>
+            <stringProp name="XPath.xpath">/document/outputResult/IMCAccountUDM/RoutingNumber[text()=&quot;00000000000&quot;]</stringProp>
+            <boolProp name="XPath.validate">false</boolProp>
+            <boolProp name="XPath.whitespace">false</boolProp>
+            <boolProp name="XPath.tolerant">false</boolProp>
+            <boolProp name="XPath.namespace">false</boolProp>
+          </XPathAssertion>
+          <hashTree/>
+          <XPathAssertion guiclass="XPathAssertionGui" testclass="XPathAssertion" testname="AccountPIN" enabled="true">
+            <boolProp name="XPath.negate">true</boolProp>
+            <stringProp name="XPath.xpath">/document/outputResult/IMCAccountUDM/AccountPIN</stringProp>
+            <boolProp name="XPath.validate">false</boolProp>
+            <boolProp name="XPath.whitespace">false</boolProp>
+            <boolProp name="XPath.tolerant">false</boolProp>
+            <boolProp name="XPath.namespace">false</boolProp>
+          </XPathAssertion>
+          <hashTree/>
+          <XPathAssertion guiclass="XPathAssertionGui" testclass="XPathAssertion" testname="CreditType" enabled="true">
+            <boolProp name="XPath.negate">true</boolProp>
+            <stringProp name="XPath.xpath">/document/outputResult/IMCAccountUDM/CreditType</stringProp>
+            <boolProp name="XPath.validate">false</boolProp>
+            <boolProp name="XPath.whitespace">false</boolProp>
+            <boolProp name="XPath.tolerant">false</boolProp>
+            <boolProp name="XPath.namespace">false</boolProp>
+          </XPathAssertion>
+          <hashTree/>
+          <XPathAssertion guiclass="XPathAssertionGui" testclass="XPathAssertion" testname="BankName[text()=&quot;SPARKASSE                                         &quot;]" enabled="true">
+            <boolProp name="XPath.negate">false</boolProp>
+            <stringProp name="XPath.xpath">/document/outputResult/IMCAccountUDM/BankName[text()=&quot;SPARKASSE                                         &quot;]</stringProp>
+            <boolProp name="XPath.validate">false</boolProp>
+            <boolProp name="XPath.whitespace">false</boolProp>
+            <boolProp name="XPath.tolerant">false</boolProp>
+            <boolProp name="XPath.namespace">false</boolProp>
+          </XPathAssertion>
+          <hashTree/>
+          <XPathAssertion guiclass="XPathAssertionGui" testclass="XPathAssertion" testname="IntlBankAcctNumber[text()=&quot;DE45750500000020835567            &quot;]" enabled="true">
+            <boolProp name="XPath.negate">false</boolProp>
+            <stringProp name="XPath.xpath">/document/outputResult/IMCAccountUDM/IntlBankAcctNumber[text()=&quot;DE45750500000020835567            &quot;]</stringProp>
+            <boolProp name="XPath.validate">false</boolProp>
+            <boolProp name="XPath.whitespace">false</boolProp>
+            <boolProp name="XPath.tolerant">false</boolProp>
+            <boolProp name="XPath.namespace">false</boolProp>
+          </XPathAssertion>
+          <hashTree/>
+          <XPathAssertion guiclass="XPathAssertionGui" testclass="XPathAssertion" testname="SWIFTCode[text()=&quot;BYLADEM1RBG&quot;]" enabled="true">
+            <boolProp name="XPath.negate">false</boolProp>
+            <stringProp name="XPath.xpath">/document/outputResult/IMCAccountUDM/SWIFTCode[text()=&quot;BYLADEM1RBG&quot;]</stringProp>
+            <boolProp name="XPath.validate">false</boolProp>
+            <boolProp name="XPath.whitespace">false</boolProp>
+            <boolProp name="XPath.tolerant">false</boolProp>
+            <boolProp name="XPath.namespace">false</boolProp>
+          </XPathAssertion>
+          <hashTree/>
+          <XPathAssertion guiclass="XPathAssertionGui" testclass="XPathAssertion" testname="AccountHolderName[text()=&quot;00000006550&quot;]" enabled="true">
+            <boolProp name="XPath.negate">false</boolProp>
+            <stringProp name="XPath.xpath">/document/outputResult/IMCAccountUDM/AccountHolderName[text()=&quot;00000006550&quot;]</stringProp>
+            <boolProp name="XPath.validate">false</boolProp>
+            <boolProp name="XPath.whitespace">false</boolProp>
+            <boolProp name="XPath.tolerant">false</boolProp>
+            <boolProp name="XPath.namespace">false</boolProp>
+          </XPathAssertion>
+          <hashTree/>
+          <XPathAssertion guiclass="XPathAssertionGui" testclass="XPathAssertion" testname="TargetApplications" enabled="true">
+            <boolProp name="XPath.negate">true</boolProp>
+            <stringProp name="XPath.xpath">/document/outputResult/IMCAccountUDM/TargetApplications</stringProp>
+            <boolProp name="XPath.validate">false</boolProp>
+            <boolProp name="XPath.whitespace">false</boolProp>
+            <boolProp name="XPath.tolerant">false</boolProp>
+            <boolProp name="XPath.namespace">false</boolProp>
+          </XPathAssertion>
+          <hashTree/>
+          <XPathAssertion guiclass="XPathAssertionGui" testclass="XPathAssertion" testname="Affiliate[text()=&quot;060&quot;]" enabled="true">
+            <boolProp name="XPath.negate">false</boolProp>
+            <stringProp name="XPath.xpath">/document/outputResult/IMCAccountUDM/TargetApplications/Affiliate[text()=&quot;060&quot;]</stringProp>
+            <boolProp name="XPath.validate">false</boolProp>
+            <boolProp name="XPath.whitespace">false</boolProp>
+            <boolProp name="XPath.tolerant">false</boolProp>
+            <boolProp name="XPath.namespace">false</boolProp>
+          </XPathAssertion>
+          <hashTree/>
+          <XPathAssertion guiclass="XPathAssertionGui" testclass="XPathAssertion" testname="Country[text()=&quot;060&quot;]" enabled="true">
+            <boolProp name="XPath.negate">false</boolProp>
+            <stringProp name="XPath.xpath">/document/outputResult/IMCAccountUDM/TargetApplications/Country[text()=&quot;060&quot;]</stringProp>
+            <boolProp name="XPath.validate">false</boolProp>
+            <boolProp name="XPath.whitespace">false</boolProp>
+            <boolProp name="XPath.tolerant">false</boolProp>
+            <boolProp name="XPath.namespace">false</boolProp>
+          </XPathAssertion>
+          <hashTree/>
+          <XPathAssertion guiclass="XPathAssertionGui" testclass="XPathAssertion" testname="SourceTransactionCode[text()=&quot;U&quot;]" enabled="true">
+            <boolProp name="XPath.negate">false</boolProp>
+            <stringProp name="XPath.xpath">/document/outputResult/IMCAccountUDM/TargetApplications/SourceTransactionCode[text()=&quot;U&quot;]</stringProp>
+            <boolProp name="XPath.validate">false</boolProp>
+            <boolProp name="XPath.whitespace">false</boolProp>
+            <boolProp name="XPath.tolerant">false</boolProp>
+            <boolProp name="XPath.namespace">false</boolProp>
+          </XPathAssertion>
+          <hashTree/>
+          <XPathAssertion guiclass="XPathAssertionGui" testclass="XPathAssertion" testname="webmTransactionDate[text()=&quot;2018-05-29 15:32:46.079&quot;]" enabled="true">
+            <boolProp name="XPath.negate">false</boolProp>
+            <stringProp name="XPath.xpath">/document/outputResult/IMCAccountUDM/TargetApplications/webmTransactionDate[text()=&quot;2018-05-29 15:32:46.079&quot;]</stringProp>
+            <boolProp name="XPath.validate">false</boolProp>
+            <boolProp name="XPath.whitespace">false</boolProp>
+            <boolProp name="XPath.tolerant">false</boolProp>
+            <boolProp name="XPath.namespace">false</boolProp>
+          </XPathAssertion>
+          <hashTree/>
+          <XPathAssertion guiclass="XPathAssertionGui" testclass="XPathAssertion" testname="PublishingApplication[text()=&quot;OMS&quot;]" enabled="true">
+            <boolProp name="XPath.negate">false</boolProp>
+            <stringProp name="XPath.xpath">/document/outputResult/IMCAccountUDM/TargetApplications/PublishingApplication[text()=&quot;OMS&quot;]</stringProp>
+            <boolProp name="XPath.validate">false</boolProp>
+            <boolProp name="XPath.whitespace">false</boolProp>
+            <boolProp name="XPath.tolerant">false</boolProp>
+            <boolProp name="XPath.namespace">false</boolProp>
+          </XPathAssertion>
+          <hashTree/>
+          <XPathAssertion guiclass="XPathAssertionGui" testclass="XPathAssertion" testname="BufferSequenceNumber[text()=&quot;000000050532693&quot;]" enabled="true">
+            <boolProp name="XPath.negate">false</boolProp>
+            <stringProp name="XPath.xpath">/document/outputResult/IMCAccountUDM/TargetApplications/BufferSequenceNumber[text()=&quot;000000050532693&quot;]</stringProp>
+            <boolProp name="XPath.validate">false</boolProp>
+            <boolProp name="XPath.whitespace">false</boolProp>
+            <boolProp name="XPath.tolerant">false</boolProp>
+            <boolProp name="XPath.namespace">false</boolProp>
+          </XPathAssertion>
+          <hashTree/>
+          <XPathAssertion guiclass="XPathAssertionGui" testclass="XPathAssertion" testname="SourceFile[text()=&quot;ODSTACC&quot;]" enabled="true">
+            <boolProp name="XPath.negate">false</boolProp>
+            <stringProp name="XPath.xpath">/document/outputResult/IMCAccountUDM/TargetApplications/SourceFile[text()=&quot;ODSTACC&quot;]</stringProp>
+            <boolProp name="XPath.validate">false</boolProp>
+            <boolProp name="XPath.whitespace">false</boolProp>
+            <boolProp name="XPath.tolerant">false</boolProp>
+            <boolProp name="XPath.namespace">false</boolProp>
+          </XPathAssertion>
+          <hashTree/>
+          <XPathAssertion guiclass="XPathAssertionGui" testclass="XPathAssertion" testname="DocumentID[text()=&quot;65503&quot;]" enabled="true">
+            <boolProp name="XPath.negate">false</boolProp>
+            <stringProp name="XPath.xpath">/document/outputResult/IMCAccountUDM/TargetApplications/DocumentID[text()=&quot;65503&quot;]</stringProp>
+            <boolProp name="XPath.validate">false</boolProp>
+            <boolProp name="XPath.whitespace">false</boolProp>
+            <boolProp name="XPath.tolerant">false</boolProp>
+            <boolProp name="XPath.namespace">false</boolProp>
+          </XPathAssertion>
+          <hashTree/>
+          <XPathAssertion guiclass="XPathAssertionGui" testclass="XPathAssertion" testname="AS400DateTimeStamp[text()=&quot;2018-05-29 21:32:42.918&quot;]" enabled="true">
+            <boolProp name="XPath.negate">false</boolProp>
+            <stringProp name="XPath.xpath">/document/outputResult/IMCAccountUDM/TargetApplications/AS400DateTimeStamp[text()=&quot;2018-05-29 21:32:42.918&quot;]</stringProp>
+            <boolProp name="XPath.validate">false</boolProp>
+            <boolProp name="XPath.whitespace">false</boolProp>
+            <boolProp name="XPath.tolerant">false</boolProp>
+            <boolProp name="XPath.namespace">false</boolProp>
+          </XPathAssertion>
+          <hashTree/>
+          <XPathAssertion guiclass="XPathAssertionGui" testclass="XPathAssertion" testname="ONYX[text()=&quot;N&quot;]" enabled="true">
+            <boolProp name="XPath.negate">false</boolProp>
+            <stringProp name="XPath.xpath">/document/outputResult/IMCAccountUDM/TargetApplications/ONYX[text()=&quot;N&quot;]</stringProp>
+            <boolProp name="XPath.validate">false</boolProp>
+            <boolProp name="XPath.whitespace">false</boolProp>
+            <boolProp name="XPath.tolerant">false</boolProp>
+            <boolProp name="XPath.namespace">false</boolProp>
+          </XPathAssertion>
+          <hashTree/>
+          <XPathAssertion guiclass="XPathAssertionGui" testclass="XPathAssertion" testname="RMDM[text()=&quot;N&quot;]" enabled="true">
+            <boolProp name="XPath.negate">false</boolProp>
+            <stringProp name="XPath.xpath">/document/outputResult/IMCAccountUDM/TargetApplications/RMDM[text()=&quot;N&quot;]</stringProp>
+            <boolProp name="XPath.validate">false</boolProp>
+            <boolProp name="XPath.whitespace">false</boolProp>
+            <boolProp name="XPath.tolerant">false</boolProp>
+            <boolProp name="XPath.namespace">false</boolProp>
+          </XPathAssertion>
+          <hashTree/>
+          <XPathAssertion guiclass="XPathAssertionGui" testclass="XPathAssertion" testname="LADW[text()=&quot;N&quot;]" enabled="true">
+            <boolProp name="XPath.negate">false</boolProp>
+            <stringProp name="XPath.xpath">/document/outputResult/IMCAccountUDM/TargetApplications/LADW[text()=&quot;N&quot;]</stringProp>
+            <boolProp name="XPath.validate">false</boolProp>
+            <boolProp name="XPath.whitespace">false</boolProp>
+            <boolProp name="XPath.tolerant">false</boolProp>
+            <boolProp name="XPath.namespace">false</boolProp>
+          </XPathAssertion>
+          <hashTree/>
+          <XPathAssertion guiclass="XPathAssertionGui" testclass="XPathAssertion" testname="GDW[text()=&quot;N&quot;]" enabled="true">
+            <boolProp name="XPath.negate">false</boolProp>
+            <stringProp name="XPath.xpath">/document/outputResult/IMCAccountUDM/TargetApplications/GDW[text()=&quot;N&quot;]</stringProp>
+            <boolProp name="XPath.validate">false</boolProp>
+            <boolProp name="XPath.whitespace">false</boolProp>
+            <boolProp name="XPath.tolerant">false</boolProp>
+            <boolProp name="XPath.namespace">false</boolProp>
+          </XPathAssertion>
+          <hashTree/>
+          <XPathAssertion guiclass="XPathAssertionGui" testclass="XPathAssertion" testname="ECOMM[text()=&quot;Y&quot;]" enabled="true">
+            <boolProp name="XPath.negate">false</boolProp>
+            <stringProp name="XPath.xpath">/document/outputResult/IMCAccountUDM/TargetApplications/ECOMM[text()=&quot;Y&quot;]</stringProp>
+            <boolProp name="XPath.validate">false</boolProp>
+            <boolProp name="XPath.whitespace">false</boolProp>
+            <boolProp name="XPath.tolerant">false</boolProp>
+            <boolProp name="XPath.namespace">false</boolProp>
+          </XPathAssertion>
+          <hashTree/>
+          <XPathAssertion guiclass="XPathAssertionGui" testclass="XPathAssertion" testname="EBS[text()=&quot;N&quot;]" enabled="true">
+            <boolProp name="XPath.negate">false</boolProp>
+            <stringProp name="XPath.xpath">/document/outputResult/IMCAccountUDM/TargetApplications/EBS[text()=&quot;N&quot;]</stringProp>
+            <boolProp name="XPath.validate">false</boolProp>
+            <boolProp name="XPath.whitespace">false</boolProp>
+            <boolProp name="XPath.tolerant">false</boolProp>
+            <boolProp name="XPath.namespace">false</boolProp>
+          </XPathAssertion>
+          <hashTree/>
+          <XPathAssertion guiclass="XPathAssertionGui" testclass="XPathAssertion" testname="POS[text()=&quot;N&quot;]" enabled="true">
+            <boolProp name="XPath.negate">false</boolProp>
+            <stringProp name="XPath.xpath">/document/outputResult/IMCAccountUDM/TargetApplications/POS[text()=&quot;N&quot;]</stringProp>
+            <boolProp name="XPath.validate">false</boolProp>
+            <boolProp name="XPath.whitespace">false</boolProp>
+            <boolProp name="XPath.tolerant">false</boolProp>
+            <boolProp name="XPath.namespace">false</boolProp>
+          </XPathAssertion>
+          <hashTree/>
+          <XPathAssertion guiclass="XPathAssertionGui" testclass="XPathAssertion" testname="OMS[text()=&quot;N&quot;]" enabled="true">
+            <boolProp name="XPath.negate">false</boolProp>
+            <stringProp name="XPath.xpath">/document/outputResult/IMCAccountUDM/TargetApplications/OMS[text()=&quot;N&quot;]</stringProp>
+            <boolProp name="XPath.validate">false</boolProp>
+            <boolProp name="XPath.whitespace">false</boolProp>
+            <boolProp name="XPath.tolerant">false</boolProp>
+            <boolProp name="XPath.namespace">false</boolProp>
+          </XPathAssertion>
+          <hashTree/>
+          <XPathAssertion guiclass="XPathAssertionGui" testclass="XPathAssertion" testname="IMS[text()=&quot;Y&quot;]" enabled="true">
+            <boolProp name="XPath.negate">false</boolProp>
+            <stringProp name="XPath.xpath">/document/outputResult/IMCAccountUDM/TargetApplications/IMS[text()=&quot;Y&quot;]</stringProp>
+            <boolProp name="XPath.validate">false</boolProp>
+            <boolProp name="XPath.whitespace">false</boolProp>
+            <boolProp name="XPath.tolerant">false</boolProp>
+            <boolProp name="XPath.namespace">false</boolProp>
+          </XPathAssertion>
+          <hashTree/>
+          <XPathAssertion guiclass="XPathAssertionGui" testclass="XPathAssertion" testname="ACCUCAST[text()=&quot;N&quot;]" enabled="true">
+            <boolProp name="XPath.negate">false</boolProp>
+            <stringProp name="XPath.xpath">/document/outputResult/IMCAccountUDM/TargetApplications/ACCUCAST[text()=&quot;N&quot;]</stringProp>
+            <boolProp name="XPath.validate">false</boolProp>
+            <boolProp name="XPath.whitespace">false</boolProp>
+            <boolProp name="XPath.tolerant">false</boolProp>
+            <boolProp name="XPath.namespace">false</boolProp>
+          </XPathAssertion>
+          <hashTree/>
+          <XPathAssertion guiclass="XPathAssertionGui" testclass="XPathAssertion" testname="PQTS[text()=&quot;Y&quot;]" enabled="true">
+            <boolProp name="XPath.negate">false</boolProp>
+            <stringProp name="XPath.xpath">/document/outputResult/IMCAccountUDM/TargetApplications/PQTS[text()=&quot;Y&quot;]</stringProp>
+            <boolProp name="XPath.validate">false</boolProp>
+            <boolProp name="XPath.whitespace">false</boolProp>
+            <boolProp name="XPath.tolerant">false</boolProp>
+            <boolProp name="XPath.namespace">false</boolProp>
+          </XPathAssertion>
+          <hashTree/>
+          <XPathAssertion guiclass="XPathAssertionGui" testclass="XPathAssertion" testname="canonicalKey[text()=&quot;U&quot;]" enabled="true">
+            <boolProp name="XPath.negate">false</boolProp>
+            <stringProp name="XPath.xpath">/document/outputResult/IMCAccountUDM/canonicalKey[text()=&quot;U&quot;]</stringProp>
+            <boolProp name="XPath.validate">false</boolProp>
+            <boolProp name="XPath.whitespace">false</boolProp>
+            <boolProp name="XPath.tolerant">false</boolProp>
+            <boolProp name="XPath.namespace">false</boolProp>
+          </XPathAssertion>
+          <hashTree/>
+          <XPathAssertion guiclass="XPathAssertionGui" testclass="XPathAssertion" testname="SourceTransactionCode[1][text()=&quot;U&quot;]" enabled="true">
+            <boolProp name="XPath.negate">false</boolProp>
+            <stringProp name="XPath.xpath">/document/outputResult/IMCAccountUDM/SourceTransactionCode[1][text()=&quot;U&quot;]</stringProp>
+            <boolProp name="XPath.validate">false</boolProp>
+            <boolProp name="XPath.whitespace">false</boolProp>
+            <boolProp name="XPath.tolerant">false</boolProp>
+            <boolProp name="XPath.namespace">false</boolProp>
+          </XPathAssertion>
+          <hashTree/>
+          <XPathAssertion guiclass="XPathAssertionGui" testclass="XPathAssertion" testname="webmTransactionDate[1][text()=&quot;2018-05-29 15:32:46.079&quot;]" enabled="true">
+            <boolProp name="XPath.negate">false</boolProp>
+            <stringProp name="XPath.xpath">/document/outputResult/IMCAccountUDM/webmTransactionDate[1][text()=&quot;2018-05-29 15:32:46.079&quot;]</stringProp>
+            <boolProp name="XPath.validate">false</boolProp>
+            <boolProp name="XPath.whitespace">false</boolProp>
+            <boolProp name="XPath.tolerant">false</boolProp>
+            <boolProp name="XPath.namespace">false</boolProp>
+          </XPathAssertion>
+          <hashTree/>
+          <XPathAssertion guiclass="XPathAssertionGui" testclass="XPathAssertion" testname="PublishingApplication[1][text()=&quot;OMS&quot;]" enabled="true">
+            <boolProp name="XPath.negate">false</boolProp>
+            <stringProp name="XPath.xpath">/document/outputResult/IMCAccountUDM/PublishingApplication[1][text()=&quot;OMS&quot;]</stringProp>
+            <boolProp name="XPath.validate">false</boolProp>
+            <boolProp name="XPath.whitespace">false</boolProp>
+            <boolProp name="XPath.tolerant">false</boolProp>
+            <boolProp name="XPath.namespace">false</boolProp>
+          </XPathAssertion>
+          <hashTree/>
+          <XPathAssertion guiclass="XPathAssertionGui" testclass="XPathAssertion" testname="InsertBankAccountRequest_v1" enabled="true">
+            <boolProp name="XPath.negate">true</boolProp>
+            <stringProp name="XPath.xpath">/document/outputResult/InsertBankAccountRequest_v1</stringProp>
+            <boolProp name="XPath.validate">false</boolProp>
+            <boolProp name="XPath.whitespace">false</boolProp>
+            <boolProp name="XPath.tolerant">false</boolProp>
+            <boolProp name="XPath.namespace">false</boolProp>
+          </XPathAssertion>
+          <hashTree/>
+          <XPathAssertion guiclass="XPathAssertionGui" testclass="XPathAssertion" testname="Control" enabled="true">
+            <boolProp name="XPath.negate">true</boolProp>
+            <stringProp name="XPath.xpath">/document/outputResult/InsertBankAccountRequest_v1/Control</stringProp>
+            <boolProp name="XPath.validate">false</boolProp>
+            <boolProp name="XPath.whitespace">false</boolProp>
+            <boolProp name="XPath.tolerant">false</boolProp>
+            <boolProp name="XPath.namespace">false</boolProp>
+          </XPathAssertion>
+          <hashTree/>
+          <XPathAssertion guiclass="XPathAssertionGui" testclass="XPathAssertion" testname="SOA_INSTANCE_ID[text()=&quot;47650176&quot;]" enabled="true">
+            <boolProp name="XPath.negate">false</boolProp>
+            <stringProp name="XPath.xpath">/document/outputResult/InsertBankAccountRequest_v1/Control/SOA_INSTANCE_ID[text()=&quot;47650176&quot;]</stringProp>
+            <boolProp name="XPath.validate">false</boolProp>
+            <boolProp name="XPath.whitespace">false</boolProp>
+            <boolProp name="XPath.tolerant">false</boolProp>
+            <boolProp name="XPath.namespace">false</boolProp>
+          </XPathAssertion>
+          <hashTree/>
+          <XPathAssertion guiclass="XPathAssertionGui" testclass="XPathAssertion" testname="AFFILIATE_CODE[text()=&quot;060&quot;]" enabled="true">
+            <boolProp name="XPath.negate">false</boolProp>
+            <stringProp name="XPath.xpath">/document/outputResult/InsertBankAccountRequest_v1/Control/AFFILIATE_CODE[text()=&quot;060&quot;]</stringProp>
+            <boolProp name="XPath.validate">false</boolProp>
+            <boolProp name="XPath.whitespace">false</boolProp>
+            <boolProp name="XPath.tolerant">false</boolProp>
+            <boolProp name="XPath.namespace">false</boolProp>
+          </XPathAssertion>
+          <hashTree/>
+          <XPathAssertion guiclass="XPathAssertionGui" testclass="XPathAssertion" testname="COUNTRY_CODE[text()=&quot;060&quot;]" enabled="true">
+            <boolProp name="XPath.negate">false</boolProp>
+            <stringProp name="XPath.xpath">/document/outputResult/InsertBankAccountRequest_v1/Control/COUNTRY_CODE[text()=&quot;060&quot;]</stringProp>
+            <boolProp name="XPath.validate">false</boolProp>
+            <boolProp name="XPath.whitespace">false</boolProp>
+            <boolProp name="XPath.tolerant">false</boolProp>
+            <boolProp name="XPath.namespace">false</boolProp>
+          </XPathAssertion>
+          <hashTree/>
+          <XPathAssertion guiclass="XPathAssertionGui" testclass="XPathAssertion" testname="DISTRIBUTOR_NUMBER[text()=&quot;6550&quot;]" enabled="true">
+            <boolProp name="XPath.negate">false</boolProp>
+            <stringProp name="XPath.xpath">/document/outputResult/InsertBankAccountRequest_v1/Control/DISTRIBUTOR_NUMBER[text()=&quot;6550&quot;]</stringProp>
+            <boolProp name="XPath.validate">false</boolProp>
+            <boolProp name="XPath.whitespace">false</boolProp>
+            <boolProp name="XPath.tolerant">false</boolProp>
+            <boolProp name="XPath.namespace">false</boolProp>
+          </XPathAssertion>
+          <hashTree/>
+          <XPathAssertion guiclass="XPathAssertionGui" testclass="XPathAssertion" testname="OPERATION_CODE[text()=&quot;UPDATE&quot;]" enabled="true">
+            <boolProp name="XPath.negate">false</boolProp>
+            <stringProp name="XPath.xpath">/document/outputResult/InsertBankAccountRequest_v1/Control/OPERATION_CODE[text()=&quot;UPDATE&quot;]</stringProp>
+            <boolProp name="XPath.validate">false</boolProp>
+            <boolProp name="XPath.whitespace">false</boolProp>
+            <boolProp name="XPath.tolerant">false</boolProp>
+            <boolProp name="XPath.namespace">false</boolProp>
+          </XPathAssertion>
+          <hashTree/>
+          <XPathAssertion guiclass="XPathAssertionGui" testclass="XPathAssertion" testname="PROCESS_FLAG[text()=&quot;N&quot;]" enabled="true">
+            <boolProp name="XPath.negate">false</boolProp>
+            <stringProp name="XPath.xpath">/document/outputResult/InsertBankAccountRequest_v1/Control/PROCESS_FLAG[text()=&quot;N&quot;]</stringProp>
+            <boolProp name="XPath.validate">false</boolProp>
+            <boolProp name="XPath.whitespace">false</boolProp>
+            <boolProp name="XPath.tolerant">false</boolProp>
+            <boolProp name="XPath.namespace">false</boolProp>
+          </XPathAssertion>
+          <hashTree/>
+          <XPathAssertion guiclass="XPathAssertionGui" testclass="XPathAssertion" testname="MESSAGE_DATE[text()=&quot;2018-05-29 21:32:42.918&quot;]" enabled="true">
+            <boolProp name="XPath.negate">false</boolProp>
+            <stringProp name="XPath.xpath">/document/outputResult/InsertBankAccountRequest_v1/Control/MESSAGE_DATE[text()=&quot;2018-05-29 21:32:42.918&quot;]</stringProp>
+            <boolProp name="XPath.validate">false</boolProp>
+            <boolProp name="XPath.whitespace">false</boolProp>
+            <boolProp name="XPath.tolerant">false</boolProp>
+            <boolProp name="XPath.namespace">false</boolProp>
+          </XPathAssertion>
+          <hashTree/>
+          <XPathAssertion guiclass="XPathAssertionGui" testclass="XPathAssertion" testname="CREATED_DATE[text()=&quot;2018-05-29 15:32:46&quot;]" enabled="true">
+            <boolProp name="XPath.negate">false</boolProp>
+            <stringProp name="XPath.xpath">/document/outputResult/InsertBankAccountRequest_v1/Control/CREATED_DATE[text()=&quot;2018-05-29 15:32:46&quot;]</stringProp>
+            <boolProp name="XPath.validate">false</boolProp>
+            <boolProp name="XPath.whitespace">false</boolProp>
+            <boolProp name="XPath.tolerant">false</boolProp>
+            <boolProp name="XPath.namespace">false</boolProp>
+          </XPathAssertion>
+          <hashTree/>
+          <XPathAssertion guiclass="XPathAssertionGui" testclass="XPathAssertion" testname="CREATED_BY[text()=&quot;1.1038&quot;]" enabled="true">
+            <boolProp name="XPath.negate">false</boolProp>
+            <stringProp name="XPath.xpath">/document/outputResult/InsertBankAccountRequest_v1/Control/CREATED_BY[text()=&quot;1.1038&quot;]</stringProp>
+            <boolProp name="XPath.validate">false</boolProp>
+            <boolProp name="XPath.whitespace">false</boolProp>
+            <boolProp name="XPath.tolerant">false</boolProp>
+            <boolProp name="XPath.namespace">false</boolProp>
+          </XPathAssertion>
+          <hashTree/>
+          <XPathAssertion guiclass="XPathAssertionGui" testclass="XPathAssertion" testname="LAST_UPDATE_DATE[text()=&quot;2018-05-29 15:32:46&quot;]" enabled="true">
+            <boolProp name="XPath.negate">false</boolProp>
+            <stringProp name="XPath.xpath">/document/outputResult/InsertBankAccountRequest_v1/Control/LAST_UPDATE_DATE[text()=&quot;2018-05-29 15:32:46&quot;]</stringProp>
+            <boolProp name="XPath.validate">false</boolProp>
+            <boolProp name="XPath.whitespace">false</boolProp>
+            <boolProp name="XPath.tolerant">false</boolProp>
+            <boolProp name="XPath.namespace">false</boolProp>
+          </XPathAssertion>
+          <hashTree/>
+          <XPathAssertion guiclass="XPathAssertionGui" testclass="XPathAssertion" testname="LAST_UPDATED_BY[text()=&quot;1.1038&quot;]" enabled="true">
+            <boolProp name="XPath.negate">false</boolProp>
+            <stringProp name="XPath.xpath">/document/outputResult/InsertBankAccountRequest_v1/Control/LAST_UPDATED_BY[text()=&quot;1.1038&quot;]</stringProp>
+            <boolProp name="XPath.validate">false</boolProp>
+            <boolProp name="XPath.whitespace">false</boolProp>
+            <boolProp name="XPath.tolerant">false</boolProp>
+            <boolProp name="XPath.namespace">false</boolProp>
+          </XPathAssertion>
+          <hashTree/>
+          <XPathAssertion guiclass="XPathAssertionGui" testclass="XPathAssertion" testname="SUPPLIER_PROCESS_FLAG[text()=&quot;N&quot;]" enabled="true">
+            <boolProp name="XPath.negate">false</boolProp>
+            <stringProp name="XPath.xpath">/document/outputResult/InsertBankAccountRequest_v1/Control/SUPPLIER_PROCESS_FLAG[text()=&quot;N&quot;]</stringProp>
+            <boolProp name="XPath.validate">false</boolProp>
+            <boolProp name="XPath.whitespace">false</boolProp>
+            <boolProp name="XPath.tolerant">false</boolProp>
+            <boolProp name="XPath.namespace">false</boolProp>
+          </XPathAssertion>
+          <hashTree/>
+          <XPathAssertion guiclass="XPathAssertionGui" testclass="XPathAssertion" testname="SOURCE_SYSTEM[text()=&quot;OMS&quot;]" enabled="true">
+            <boolProp name="XPath.negate">false</boolProp>
+            <stringProp name="XPath.xpath">/document/outputResult/InsertBankAccountRequest_v1/Control/SOURCE_SYSTEM[text()=&quot;OMS&quot;]</stringProp>
+            <boolProp name="XPath.validate">false</boolProp>
+            <boolProp name="XPath.whitespace">false</boolProp>
+            <boolProp name="XPath.tolerant">false</boolProp>
+            <boolProp name="XPath.namespace">false</boolProp>
+          </XPathAssertion>
+          <hashTree/>
+          <XPathAssertion guiclass="XPathAssertionGui" testclass="XPathAssertion" testname="SOURCE_EVENT_CODE[text()=&quot;ODSTACC&quot;]" enabled="true">
+            <boolProp name="XPath.negate">false</boolProp>
+            <stringProp name="XPath.xpath">/document/outputResult/InsertBankAccountRequest_v1/Control/SOURCE_EVENT_CODE[text()=&quot;ODSTACC&quot;]</stringProp>
+            <boolProp name="XPath.validate">false</boolProp>
+            <boolProp name="XPath.whitespace">false</boolProp>
+            <boolProp name="XPath.tolerant">false</boolProp>
+            <boolProp name="XPath.namespace">false</boolProp>
+          </XPathAssertion>
+          <hashTree/>
+          <XPathAssertion guiclass="XPathAssertionGui" testclass="XPathAssertion" testname="EVENT_ID[text()=&quot;000000050532693&quot;]" enabled="true">
+            <boolProp name="XPath.negate">false</boolProp>
+            <stringProp name="XPath.xpath">/document/outputResult/InsertBankAccountRequest_v1/Control/EVENT_ID[text()=&quot;000000050532693&quot;]</stringProp>
+            <boolProp name="XPath.validate">false</boolProp>
+            <boolProp name="XPath.whitespace">false</boolProp>
+            <boolProp name="XPath.tolerant">false</boolProp>
+            <boolProp name="XPath.namespace">false</boolProp>
+          </XPathAssertion>
+          <hashTree/>
+          <XPathAssertion guiclass="XPathAssertionGui" testclass="XPathAssertion" testname="BankAccount" enabled="true">
+            <boolProp name="XPath.negate">true</boolProp>
+            <stringProp name="XPath.xpath">/document/outputResult/InsertBankAccountRequest_v1/BankAccount</stringProp>
+            <boolProp name="XPath.validate">false</boolProp>
+            <boolProp name="XPath.whitespace">false</boolProp>
+            <boolProp name="XPath.tolerant">false</boolProp>
+            <boolProp name="XPath.namespace">false</boolProp>
+          </XPathAssertion>
+          <hashTree/>
+          <XPathAssertion guiclass="XPathAssertionGui" testclass="XPathAssertion" testname="SOA_INSTANCE_ID[text()=&quot;47650176&quot;]" enabled="true">
+            <boolProp name="XPath.negate">false</boolProp>
+            <stringProp name="XPath.xpath">/document/outputResult/InsertBankAccountRequest_v1/BankAccount/SOA_INSTANCE_ID[text()=&quot;47650176&quot;]</stringProp>
+            <boolProp name="XPath.validate">false</boolProp>
+            <boolProp name="XPath.whitespace">false</boolProp>
+            <boolProp name="XPath.tolerant">false</boolProp>
+            <boolProp name="XPath.namespace">false</boolProp>
+          </XPathAssertion>
+          <hashTree/>
+          <XPathAssertion guiclass="XPathAssertionGui" testclass="XPathAssertion" testname="AFFILIATE_CODE[text()=&quot;060&quot;]" enabled="true">
+            <boolProp name="XPath.negate">false</boolProp>
+            <stringProp name="XPath.xpath">/document/outputResult/InsertBankAccountRequest_v1/BankAccount/AFFILIATE_CODE[text()=&quot;060&quot;]</stringProp>
+            <boolProp name="XPath.validate">false</boolProp>
+            <boolProp name="XPath.whitespace">false</boolProp>
+            <boolProp name="XPath.tolerant">false</boolProp>
+            <boolProp name="XPath.namespace">false</boolProp>
+          </XPathAssertion>
+          <hashTree/>
+          <XPathAssertion guiclass="XPathAssertionGui" testclass="XPathAssertion" testname="COUNTRY_CODE[text()=&quot;060&quot;]" enabled="true">
+            <boolProp name="XPath.negate">false</boolProp>
+            <stringProp name="XPath.xpath">/document/outputResult/InsertBankAccountRequest_v1/BankAccount/COUNTRY_CODE[text()=&quot;060&quot;]</stringProp>
+            <boolProp name="XPath.validate">false</boolProp>
+            <boolProp name="XPath.whitespace">false</boolProp>
+            <boolProp name="XPath.tolerant">false</boolProp>
+            <boolProp name="XPath.namespace">false</boolProp>
+          </XPathAssertion>
+          <hashTree/>
+          <XPathAssertion guiclass="XPathAssertionGui" testclass="XPathAssertion" testname="DISTRIBUTOR_NUMBER[text()=&quot;6550&quot;]" enabled="true">
+            <boolProp name="XPath.negate">false</boolProp>
+            <stringProp name="XPath.xpath">/document/outputResult/InsertBankAccountRequest_v1/BankAccount/DISTRIBUTOR_NUMBER[text()=&quot;6550&quot;]</stringProp>
+            <boolProp name="XPath.validate">false</boolProp>
+            <boolProp name="XPath.whitespace">false</boolProp>
+            <boolProp name="XPath.tolerant">false</boolProp>
+            <boolProp name="XPath.namespace">false</boolProp>
+          </XPathAssertion>
+          <hashTree/>
+          <XPathAssertion guiclass="XPathAssertionGui" testclass="XPathAssertion" testname="BANK_ACCOUNT_NAME[text()=&quot;AMWAY 0006550, ABO 0006550&quot;]" enabled="true">
+            <boolProp name="XPath.negate">false</boolProp>
+            <stringProp name="XPath.xpath">/document/outputResult/InsertBankAccountRequest_v1/BankAccount/BANK_ACCOUNT_NAME[text()=&quot;AMWAY 0006550, ABO 0006550&quot;]</stringProp>
+            <boolProp name="XPath.validate">false</boolProp>
+            <boolProp name="XPath.whitespace">false</boolProp>
+            <boolProp name="XPath.tolerant">false</boolProp>
+            <boolProp name="XPath.namespace">false</boolProp>
+          </XPathAssertion>
+          <hashTree/>
+          <XPathAssertion guiclass="XPathAssertionGui" testclass="XPathAssertion" testname="BANK_ACCOUNT_NUM[text()=&quot;0020835567&quot;]" enabled="true">
+            <boolProp name="XPath.negate">false</boolProp>
+            <stringProp name="XPath.xpath">/document/outputResult/InsertBankAccountRequest_v1/BankAccount/BANK_ACCOUNT_NUM[text()=&quot;0020835567&quot;]</stringProp>
+            <boolProp name="XPath.validate">false</boolProp>
+            <boolProp name="XPath.whitespace">false</boolProp>
+            <boolProp name="XPath.tolerant">false</boolProp>
+            <boolProp name="XPath.namespace">false</boolProp>
+          </XPathAssertion>
+          <hashTree/>
+          <XPathAssertion guiclass="XPathAssertionGui" testclass="XPathAssertion" testname="BANK[text()=&quot;75050000&quot;]" enabled="true">
+            <boolProp name="XPath.negate">false</boolProp>
+            <stringProp name="XPath.xpath">/document/outputResult/InsertBankAccountRequest_v1/BankAccount/BANK[text()=&quot;75050000&quot;]</stringProp>
+            <boolProp name="XPath.validate">false</boolProp>
+            <boolProp name="XPath.whitespace">false</boolProp>
+            <boolProp name="XPath.tolerant">false</boolProp>
+            <boolProp name="XPath.namespace">false</boolProp>
+          </XPathAssertion>
+          <hashTree/>
+          <XPathAssertion guiclass="XPathAssertionGui" testclass="XPathAssertion" testname="BANK_BRANCH" enabled="true">
+            <boolProp name="XPath.negate">true</boolProp>
+            <stringProp name="XPath.xpath">/document/outputResult/InsertBankAccountRequest_v1/BankAccount/BANK_BRANCH</stringProp>
+            <boolProp name="XPath.validate">false</boolProp>
+            <boolProp name="XPath.whitespace">false</boolProp>
+            <boolProp name="XPath.tolerant">false</boolProp>
+            <boolProp name="XPath.namespace">false</boolProp>
+          </XPathAssertion>
+          <hashTree/>
+          <XPathAssertion guiclass="XPathAssertionGui" testclass="XPathAssertion" testname="START_DATE[text()=&quot;2018-05-29 00:00:00&quot;]" enabled="true">
+            <boolProp name="XPath.negate">false</boolProp>
+            <stringProp name="XPath.xpath">/document/outputResult/InsertBankAccountRequest_v1/BankAccount/START_DATE[text()=&quot;2018-05-29 00:00:00&quot;]</stringProp>
+            <boolProp name="XPath.validate">false</boolProp>
+            <boolProp name="XPath.whitespace">false</boolProp>
+            <boolProp name="XPath.tolerant">false</boolProp>
+            <boolProp name="XPath.namespace">false</boolProp>
+          </XPathAssertion>
+          <hashTree/>
+          <XPathAssertion guiclass="XPathAssertionGui" testclass="XPathAssertion" testname="COUNTRY[text()=&quot;DE&quot;]" enabled="true">
+            <boolProp name="XPath.negate">false</boolProp>
+            <stringProp name="XPath.xpath">/document/outputResult/InsertBankAccountRequest_v1/BankAccount/COUNTRY[text()=&quot;DE&quot;]</stringProp>
+            <boolProp name="XPath.validate">false</boolProp>
+            <boolProp name="XPath.whitespace">false</boolProp>
+            <boolProp name="XPath.tolerant">false</boolProp>
+            <boolProp name="XPath.namespace">false</boolProp>
+          </XPathAssertion>
+          <hashTree/>
+          <XPathAssertion guiclass="XPathAssertionGui" testclass="XPathAssertion" testname="TRANSACTION_TYPE[text()=&quot;007&quot;]" enabled="true">
+            <boolProp name="XPath.negate">false</boolProp>
+            <stringProp name="XPath.xpath">/document/outputResult/InsertBankAccountRequest_v1/BankAccount/TRANSACTION_TYPE[text()=&quot;007&quot;]</stringProp>
+            <boolProp name="XPath.validate">false</boolProp>
+            <boolProp name="XPath.whitespace">false</boolProp>
+            <boolProp name="XPath.tolerant">false</boolProp>
+            <boolProp name="XPath.namespace">false</boolProp>
+          </XPathAssertion>
+          <hashTree/>
+          <XPathAssertion guiclass="XPathAssertionGui" testclass="XPathAssertion" testname="CURRENCY[text()=&quot;EUR&quot;]" enabled="true">
+            <boolProp name="XPath.negate">false</boolProp>
+            <stringProp name="XPath.xpath">/document/outputResult/InsertBankAccountRequest_v1/BankAccount/CURRENCY[text()=&quot;EUR&quot;]</stringProp>
+            <boolProp name="XPath.validate">false</boolProp>
+            <boolProp name="XPath.whitespace">false</boolProp>
+            <boolProp name="XPath.tolerant">false</boolProp>
+            <boolProp name="XPath.namespace">false</boolProp>
+          </XPathAssertion>
+          <hashTree/>
+          <XPathAssertion guiclass="XPathAssertionGui" testclass="XPathAssertion" testname="IBAN[text()=&quot;DE45750500000020835567&quot;]" enabled="true">
+            <boolProp name="XPath.negate">false</boolProp>
+            <stringProp name="XPath.xpath">/document/outputResult/InsertBankAccountRequest_v1/BankAccount/IBAN[text()=&quot;DE45750500000020835567&quot;]</stringProp>
+            <boolProp name="XPath.validate">false</boolProp>
+            <boolProp name="XPath.whitespace">false</boolProp>
+            <boolProp name="XPath.tolerant">false</boolProp>
+            <boolProp name="XPath.namespace">false</boolProp>
+          </XPathAssertion>
+          <hashTree/>
+          <XPathAssertion guiclass="XPathAssertionGui" testclass="XPathAssertion" testname="IBAN_SWIFT_BIC[text()=&quot;BYLADEM1RBG&quot;]" enabled="true">
+            <boolProp name="XPath.negate">false</boolProp>
+            <stringProp name="XPath.xpath">/document/outputResult/InsertBankAccountRequest_v1/BankAccount/IBAN_SWIFT_BIC[text()=&quot;BYLADEM1RBG&quot;]</stringProp>
+            <boolProp name="XPath.validate">false</boolProp>
+            <boolProp name="XPath.whitespace">false</boolProp>
+            <boolProp name="XPath.tolerant">false</boolProp>
+            <boolProp name="XPath.namespace">false</boolProp>
+          </XPathAssertion>
+          <hashTree/>
+          <XPathAssertion guiclass="XPathAssertionGui" testclass="XPathAssertion" testname="SEQUENCE_NUMBER[text()=&quot;0000003&quot;]" enabled="true">
+            <boolProp name="XPath.negate">false</boolProp>
+            <stringProp name="XPath.xpath">/document/outputResult/InsertBankAccountRequest_v1/BankAccount/SEQUENCE_NUMBER[text()=&quot;0000003&quot;]</stringProp>
+            <boolProp name="XPath.validate">false</boolProp>
+            <boolProp name="XPath.whitespace">false</boolProp>
+            <boolProp name="XPath.tolerant">false</boolProp>
+            <boolProp name="XPath.namespace">false</boolProp>
+          </XPathAssertion>
+          <hashTree/>
+          <XPathAssertion guiclass="XPathAssertionGui" testclass="XPathAssertion" testname="PROCESS_FLAG[text()=&quot;N&quot;]" enabled="true">
+            <boolProp name="XPath.negate">false</boolProp>
+            <stringProp name="XPath.xpath">/document/outputResult/InsertBankAccountRequest_v1/BankAccount/PROCESS_FLAG[text()=&quot;N&quot;]</stringProp>
+            <boolProp name="XPath.validate">false</boolProp>
+            <boolProp name="XPath.whitespace">false</boolProp>
+            <boolProp name="XPath.tolerant">false</boolProp>
+            <boolProp name="XPath.namespace">false</boolProp>
+          </XPathAssertion>
+          <hashTree/>
+          <XPathAssertion guiclass="XPathAssertionGui" testclass="XPathAssertion" testname="CREATED_DATE[text()=&quot;2018-05-29 15:32:46&quot;]" enabled="true">
+            <boolProp name="XPath.negate">false</boolProp>
+            <stringProp name="XPath.xpath">/document/outputResult/InsertBankAccountRequest_v1/BankAccount/CREATED_DATE[text()=&quot;2018-05-29 15:32:46&quot;]</stringProp>
+            <boolProp name="XPath.validate">false</boolProp>
+            <boolProp name="XPath.whitespace">false</boolProp>
+            <boolProp name="XPath.tolerant">false</boolProp>
+            <boolProp name="XPath.namespace">false</boolProp>
+          </XPathAssertion>
+          <hashTree/>
+          <XPathAssertion guiclass="XPathAssertionGui" testclass="XPathAssertion" testname="CREATED_BY[text()=&quot;1.1038&quot;]" enabled="true">
+            <boolProp name="XPath.negate">false</boolProp>
+            <stringProp name="XPath.xpath">/document/outputResult/InsertBankAccountRequest_v1/BankAccount/CREATED_BY[text()=&quot;1.1038&quot;]</stringProp>
+            <boolProp name="XPath.validate">false</boolProp>
+            <boolProp name="XPath.whitespace">false</boolProp>
+            <boolProp name="XPath.tolerant">false</boolProp>
+            <boolProp name="XPath.namespace">false</boolProp>
+          </XPathAssertion>
+          <hashTree/>
+          <XPathAssertion guiclass="XPathAssertionGui" testclass="XPathAssertion" testname="LAST_UPDATE_DATE[text()=&quot;2018-05-29 15:32:46&quot;]" enabled="true">
+            <boolProp name="XPath.negate">false</boolProp>
+            <stringProp name="XPath.xpath">/document/outputResult/InsertBankAccountRequest_v1/BankAccount/LAST_UPDATE_DATE[text()=&quot;2018-05-29 15:32:46&quot;]</stringProp>
+            <boolProp name="XPath.validate">false</boolProp>
+            <boolProp name="XPath.whitespace">false</boolProp>
+            <boolProp name="XPath.tolerant">false</boolProp>
+            <boolProp name="XPath.namespace">false</boolProp>
+          </XPathAssertion>
+          <hashTree/>
+          <XPathAssertion guiclass="XPathAssertionGui" testclass="XPathAssertion" testname="LAST_UPDATED_BY[text()=&quot;1.1038&quot;]" enabled="true">
+            <boolProp name="XPath.negate">false</boolProp>
+            <stringProp name="XPath.xpath">/document/outputResult/InsertBankAccountRequest_v1/BankAccount/LAST_UPDATED_BY[text()=&quot;1.1038&quot;]</stringProp>
+            <boolProp name="XPath.validate">false</boolProp>
+            <boolProp name="XPath.whitespace">false</boolProp>
+            <boolProp name="XPath.tolerant">false</boolProp>
+            <boolProp name="XPath.namespace">false</boolProp>
+          </XPathAssertion>
+          <hashTree/>
+          <XPathAssertion guiclass="XPathAssertionGui" testclass="XPathAssertion" testname="INSTRUMENT_TYPE[text()=&quot;BANKACCOUNT&quot;]" enabled="true">
+            <boolProp name="XPath.negate">false</boolProp>
+            <stringProp name="XPath.xpath">/document/outputResult/InsertBankAccountRequest_v1/BankAccount/INSTRUMENT_TYPE[text()=&quot;BANKACCOUNT&quot;]</stringProp>
+            <boolProp name="XPath.validate">false</boolProp>
+            <boolProp name="XPath.whitespace">false</boolProp>
+            <boolProp name="XPath.tolerant">false</boolProp>
+            <boolProp name="XPath.namespace">false</boolProp>
+          </XPathAssertion>
+          <hashTree/>
+          <XPathAssertion guiclass="XPathAssertionGui" testclass="XPathAssertion" testname="DMS_STATUS_FLAG[text()=&quot;V&quot;]" enabled="true">
+            <boolProp name="XPath.negate">false</boolProp>
+            <stringProp name="XPath.xpath">/document/outputResult/InsertBankAccountRequest_v1/BankAccount/DMS_STATUS_FLAG[text()=&quot;V&quot;]</stringProp>
+            <boolProp name="XPath.validate">false</boolProp>
+            <boolProp name="XPath.whitespace">false</boolProp>
+            <boolProp name="XPath.tolerant">false</boolProp>
+            <boolProp name="XPath.namespace">false</boolProp>
+          </XPathAssertion>
+          <hashTree/>
+          <XPathAssertion guiclass="XPathAssertionGui" testclass="XPathAssertion" testname="currentDateStr[text()=&quot;2018-05-29 15:32:46&quot;]" enabled="true">
+            <boolProp name="XPath.negate">false</boolProp>
+            <stringProp name="XPath.xpath">/document/outputResult/currentDateStr[text()=&quot;2018-05-29 15:32:46&quot;]</stringProp>
+            <boolProp name="XPath.validate">false</boolProp>
+            <boolProp name="XPath.whitespace">false</boolProp>
+            <boolProp name="XPath.tolerant">false</boolProp>
+            <boolProp name="XPath.namespace">false</boolProp>
+          </XPathAssertion>
+          <hashTree/>
+          <XPathAssertion guiclass="XPathAssertionGui" testclass="XPathAssertion" testname="SOA_INSTANCE_ID[1][text()=&quot;47650176&quot;]" enabled="true">
+            <boolProp name="XPath.negate">false</boolProp>
+            <stringProp name="XPath.xpath">/document/outputResult/SOA_INSTANCE_ID[1][text()=&quot;47650176&quot;]</stringProp>
+            <boolProp name="XPath.validate">false</boolProp>
+            <boolProp name="XPath.whitespace">false</boolProp>
+            <boolProp name="XPath.tolerant">false</boolProp>
+            <boolProp name="XPath.namespace">false</boolProp>
+          </XPathAssertion>
+          <hashTree/>
+          <XPathAssertion guiclass="XPathAssertionGui" testclass="XPathAssertion" testname="startTransactionOutput" enabled="true">
+            <boolProp name="XPath.negate">true</boolProp>
+            <stringProp name="XPath.xpath">/document/outputResult/startTransactionOutput</stringProp>
+            <boolProp name="XPath.validate">false</boolProp>
+            <boolProp name="XPath.whitespace">false</boolProp>
+            <boolProp name="XPath.tolerant">false</boolProp>
+            <boolProp name="XPath.namespace">false</boolProp>
+          </XPathAssertion>
+          <hashTree/>
+          <XPathAssertion guiclass="XPathAssertionGui" testclass="XPathAssertion" testname="transactionName[text()=&quot;5129699&quot;]" enabled="true">
+            <boolProp name="XPath.negate">false</boolProp>
+            <stringProp name="XPath.xpath">/document/outputResult/startTransactionOutput/transactionName[text()=&quot;5129699&quot;]</stringProp>
+            <boolProp name="XPath.validate">false</boolProp>
+            <boolProp name="XPath.whitespace">false</boolProp>
+            <boolProp name="XPath.tolerant">false</boolProp>
+            <boolProp name="XPath.namespace">false</boolProp>
+          </XPathAssertion>
+          <hashTree/>
+<!-- :Assertions: -->
+          <XPathExtractor guiclass="XPathExtractorGui" testclass="XPathExtractor" testname="Extract XPath" enabled="true">
+            <stringProp name="XPathExtractor.default">no.publish.context.id</stringProp>
+            <stringProp name="XPathExtractor.refname">publishContextID</stringProp>
+            <stringProp name="XPathExtractor.xpathQuery">/document/publishContextID</stringProp>
+            <boolProp name="XPathExtractor.validate">false</boolProp>
+            <boolProp name="XPathExtractor.tolerant">false</boolProp>
+            <boolProp name="XPathExtractor.namespace">false</boolProp>
+          </XPathExtractor>
+          <hashTree/>
+          <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View results (Request &amp; Response)" enabled="true">
+            <boolProp name="ResultCollector.error_logging">false</boolProp>
+            <objProp>
+              <name>saveConfig</name>
+              <value class="SampleSaveConfiguration">
+                <time>true</time>
+                <latency>true</latency>
+                <timestamp>true</timestamp>
+                <success>true</success>
+                <label>true</label>
+                <code>true</code>
+                <message>true</message>
+                <threadName>true</threadName>
+                <dataType>true</dataType>
+                <encoding>false</encoding>
+                <assertions>true</assertions>
+                <subresults>true</subresults>
+                <responseData>false</responseData>
+                <samplerData>false</samplerData>
+                <xml>false</xml>
+                <fieldNames>false</fieldNames>
+                <responseHeaders>false</responseHeaders>
+                <requestHeaders>false</requestHeaders>
+                <responseDataOnError>false</responseDataOnError>
+                <saveAssertionResultsFailureMessage>false</saveAssertionResultsFailureMessage>
+                <assertionsResultsToSave>0</assertionsResultsToSave>
+                <bytes>true</bytes>
+                <threadCounts>true</threadCounts>
+              </value>
+            </objProp>
+            <stringProp name="filename"></stringProp>
+          </ResultCollector>
+          <hashTree/>
+		 </hashTree>
+<!-- :HTTP Samplers: -->
+<!-- :PUBLISH STATE Assertions: -->
+       </hashTree>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>
